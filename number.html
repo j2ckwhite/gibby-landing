@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Get your number — LGO Dead Quote Recovery</title>
+<meta name="description" content="Three questions. We tell you how much quoted work went quiet in your shop last year, free.">
+<meta name="theme-color" content="#0a0a0b">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav scrolled">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="mark">LGO</span><span class="txt"><span>Dead Quote Recovery</span></span></a>
+    <nav class="nav-links">
+      <a href="index.html#math">The number</a>
+      <a href="index.html#how">How it works</a>
+      <a href="index.html#deal">The deal</a>
+    </nav>
+    <a class="btn btn-ghost" href="index.html">Back</a>
+  </div>
+</header>
+
+<main class="form-page">
+  <div class="wrap form-grid">
+    <div>
+      <div class="eyebrow">Free quote audit</div>
+      <h1 style="font-size:clamp(36px,4.6vw,60px)">Find out how much quoted work went quiet last year.</h1>
+      <p class="lede">Three numbers from you. One page back from us. If it's not worth doing anything about, we'll tell you that too.</p>
+      <ul class="side-list">
+        <li><i>1</i><span>Fill this in. Your number shows on screen straight away.</span></li>
+        <li><i>2</i><span>We reply within a day with what's actually sitting in your quotes and whether the guarantee would hold for your shop.</span></li>
+        <li><i>3</i><span>If you want to go further, you export your quotes and we start. If not, no follow-up sequence. Just this.</span></li>
+      </ul>
+    </div>
+
+    <div class="form-card">
+      <div id="formWrap">
+        <form id="leadForm" name="quote-audit" method="POST" data-netlify="true" netlify-honeypot="company" novalidate>
+          <input type="hidden" name="form-name" value="quote-audit">
+          <p style="display:none"><label>Leave blank <input name="company"></label></p>
+
+          <div class="f-sec first">About you</div>
+          <div class="f-row">
+            <div class="f"><label for="first">First name</label><input id="first" name="first" required autocomplete="given-name" placeholder="Dan"></div>
+            <div class="f"><label for="last">Last name</label><input id="last" name="last" required autocomplete="family-name" placeholder="Reyes"></div>
+          </div>
+          <div class="f-row">
+            <div class="f"><label for="email">Email</label><input id="email" name="email" type="email" required autocomplete="email" placeholder="dan@apexppf.com"></div>
+            <div class="f"><label for="phone">Cell (for the reply)</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="(555) 010-2244"></div>
+          </div>
+          <div class="f"><label for="shop">Shop name</label><input id="shop" name="shop" required placeholder="Apex PPF & Ceramic"></div>
+
+          <div class="f-sec">Your shop</div>
+          <div class="f-row">
+            <div class="f"><label for="software">Where your quotes live</label>
+              <select id="software" name="software" required>
+                <option value="" disabled selected>Choose one</option>
+                <option>Urable</option><option>QuoteIQ</option><option>Jobber</option><option>GoHighLevel</option><option>Shopmonkey</option><option>Square / Invoices</option><option>Texts and email only</option><option>Other</option>
+              </select></div>
+            <div class="f"><label for="bays">Bays</label>
+              <select id="bays" name="bays" required>
+                <option value="" disabled selected>Choose one</option>
+                <option>1</option><option>2</option><option>3–4</option><option>5+</option><option>Mobile only</option>
+              </select></div>
+          </div>
+          <div class="f"><label for="dead">Roughly how many quotes went quiet on you in the last year?</label>
+            <select id="dead" name="dead" required>
+              <option value="" disabled selected>Your best guess is fine</option>
+              <option>Under 100</option><option>100–300</option><option>300–600</option><option>600+</option><option>Honestly no idea</option>
+            </select></div>
+
+          <div class="f-sec">Your numbers (rough is fine)</div>
+          <div class="f-row">
+            <div class="f"><label for="quotes">Quotes sent per month</label><input id="quotes" name="quotes" type="number" min="1" max="1000" required inputmode="numeric" placeholder="60"></div>
+            <div class="f"><label for="closed">How many book</label><input id="closed" name="closed" type="number" min="0" max="1000" required inputmode="numeric" placeholder="12"></div>
+          </div>
+          <div class="f"><label for="ticket">Average ticket ($)</label><input id="ticket" name="ticket" type="number" min="50" max="50000" step="50" required inputmode="numeric" placeholder="2400"></div>
+
+          <button class="btn btn-primary btn-lg" type="submit">Show me my number</button>
+          <div class="err"></div>
+          <p class="fine">No card. No call required. We reply once, within a day.</p>
+        </form>
+      </div>
+
+      <div class="done" id="done">
+        <div class="k">Quoted work that went quiet in the last year</div>
+        <div class="big" id="doneNum">$0</div>
+        <p><span id="doneName">There</span>, that's roughly what you sent out that never booked. Ten of those back on the calendar at your ticket is about <b id="doneTen" style="color:var(--fg)">$0</b> of work. We'll look at your answers and reply within a day with whether the guarantee holds for a shop your size.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="index.html#how">See the 21 days</a>
+          <a class="btn btn-ghost" href="index.html">Back to the site</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr"></span> LGO · Dead Quote Recovery</span>
+    <span><a href="index.html#deal">The deal</a></span>
+  </div>
+</footer>
+
+<script>document.getElementById('yr').textContent=new Date().getFullYear()</script>
+<script src="site.js"></script>
+</body>
+</html>

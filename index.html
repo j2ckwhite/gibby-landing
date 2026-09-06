@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LGO — We book the quotes your shop already sent</title>
+<meta name="description" content="Dead Quote Recovery for ceramic, PPF and tint shops. We work every quote you sent this year that never booked and put appointments on your calendar. Ten booked appointments in 21 days or you don't pay.">
+<meta name="theme-color" content="#0a0a0b">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><span class="mark">LGO</span><span class="txt"><span>Dead Quote Recovery</span></span></a>
+    <nav class="nav-links">
+      <a href="#math">The number</a>
+      <a href="#leak">Why it sits there</a>
+      <a href="#how">How it works</a>
+      <a href="#deal">The deal</a>
+      <a href="#faq">Questions</a>
+    </nav>
+    <a class="btn btn-primary" href="number.html">Get your number</a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="glow glow-a"></div><div class="glow glow-b"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">For ceramic, PPF and tint shops</div>
+      <h1>
+        <span class="line">You already paid</span>
+        <span class="line">for the customer.</span>
+        <span class="line dim">He just went quiet.</span>
+      </h1>
+      <p class="lede">Most shops close about one quote in five. The other four sit in a phone forever. We go back through every quote you sent this year that never booked, get those people talking again, and put them on your calendar.</p>
+      <div class="actions">
+        <a class="btn btn-primary btn-lg" href="number.html">See what's sitting in your quotes <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-ghost btn-lg" href="#how">How it works</a>
+      </div>
+      <div class="fine"><span>Ten booked appointments in 21 days or you don't pay</span><span>No ad spend</span><span>No logins</span></div>
+    </div>
+
+    <div class="ledger" id="ledger" aria-label="Animated example of dead quotes being booked">
+      <div class="ledger-head"><b>Quotes that never booked · last 12 months</b><span class="live-dot"><i></i>Working</span></div>
+      <div class="rows" id="rows"></div>
+      <div class="ledger-foot">
+        <div>Still sitting there<b id="deadTotal">$0</b></div>
+        <div>Booked · <span id="bookedCount">0</span> appointments<b class="live" id="liveTotal">$0</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-label">The last thing they said before they disappeared</div>
+  <div class="ticker-inner">
+    <span>"Let me talk to my wife"</span><span>"After my bonus"</span><span>"Maybe in the spring"</span><span>"Just getting quotes for now"</span><span>"I'll call you back"</span><span>"Need to think about it"</span><span>"Is that your best price?"</span><span>"Once the truck comes in"</span><span>"Sounds good, thanks"</span><span>"What's the difference between the packages?"</span>
+    <span>"Let me talk to my wife"</span><span>"After my bonus"</span><span>"Maybe in the spring"</span><span>"Just getting quotes for now"</span><span>"I'll call you back"</span><span>"Need to think about it"</span><span>"Is that your best price?"</span><span>"Once the truck comes in"</span><span>"Sounds good, thanks"</span><span>"What's the difference between the packages?"</span>
+  </div>
+</div>
+
+<!-- MATH -->
+<section class="math" id="math">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">Your number, not ours</div>
+      <h2>Sixty quotes. Twelve jobs. Where did the other forty-eight go?</h2>
+      <p class="lede">Nowhere. They didn't buy from someone else, most of them. They got busy, or the price sat for a day and life moved on. Drag the sliders to what your shop actually does.</p>
+    </div>
+    <div class="math-grid">
+      <div class="controls reveal" data-d="1">
+        <div class="ctrl">
+          <label for="q">Quotes you send in a month <output id="qOut">60</output></label>
+          <input type="range" id="q" min="10" max="200" step="5" value="60">
+        </div>
+        <div class="ctrl">
+          <label for="c">How many turn into jobs <output id="cOut">12</output></label>
+          <input type="range" id="c" min="0" max="60" step="1" value="12">
+        </div>
+        <div class="ctrl">
+          <label for="t">Average ticket <output id="tOut">$2,400</output></label>
+          <input type="range" id="t" min="300" max="8000" step="50" value="2400">
+        </div>
+        <p class="muted" style="font-size:15px;margin:0">Don't know your numbers? Most owners don't. That's part of what we fix. <a href="number.html" style="color:var(--live)">Send us the export and we'll tell you.</a></p>
+      </div>
+      <div class="result reveal" data-d="2">
+        <div class="k">Quoted work that never booked</div>
+        <div class="big" id="monthly">$0</div>
+        <div class="sub">every month · <span id="lostCount">48</span> people who asked you for a price and didn't book</div>
+        <hr>
+        <div class="split">
+          <div><div class="k">Over a year</div><div class="big live" id="yearly">$0</div></div>
+          <div><div class="k">Ten bookings at your ticket</div><div class="big" id="tenValue">$0</div></div>
+        </div>
+        <div class="note"><b>That's not lost.</b> It's unworked. Every one of those people already knows your shop, already knows the price, and already told you they wanted it.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEAK -->
+<section id="leak">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">Why it sits there</div>
+      <h2>Nobody in the shop owns the quote after it's sent.</h2>
+      <p class="lede">It isn't a demand problem and it isn't an ad problem. The work is coming in. It leaks out between the quote and the booking, and it leaks for the same four reasons in almost every shop we've looked at.</p>
+    </div>
+    <div class="cards">
+      <div class="card reveal" data-d="1">
+        <div class="n">01 <i>Follow-up</i></div>
+        <h3>Follow-up stops at one.</h3>
+        <p>Most shops send the price, maybe one "just checking in," then move on. Three touches converts far more than one. Almost nobody gets to three, because nobody's job is to.</p>
+      </div>
+      <div class="card reveal" data-d="2">
+        <div class="n">02 <i>The owner</i></div>
+        <h3>You are the sales department.</h3>
+        <p>You quote, you chase, you book, and you also run the shop. Chasing a $2,400 quote is a $2,400 task. It keeps losing to the $10 tasks that shout louder in the moment.</p>
+      </div>
+      <div class="card reveal" data-d="3">
+        <div class="n">03 <i>Slow season</i></div>
+        <h3>Winter arrives and the list is already dead.</h3>
+        <p>When the bays go quiet, the only leads you have are the ones you didn't close in summer. Most shops have never gone back to them, so the slow season stays slow.</p>
+      </div>
+      <div class="card reveal" data-d="4">
+        <div class="n">04 <i>No scoreboard</i></div>
+        <h3>No one knows the number.</h3>
+        <p>Ask most owners how many quotes went quiet last year and the honest answer is "no idea." You can't fix a leak you've never measured. We measure it first, for free.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARE -->
+<section id="different" style="padding-top:0">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">The part most shops get wrong</div>
+      <h2>An automated follow-up bot is not the fix. It's how you lose them for good.</h2>
+      <p class="lede">The CRMs will sell you a generic AI text sequence. Your customers can smell it in one line, and the shop's name is on it. What works is a real person, writing from the actual quote, under your shop's name.</p>
+    </div>
+    <div class="compare">
+      <div class="phone bad reveal" data-d="1">
+        <div class="tag">Generic bot follow-up</div>
+        <div class="bubble out">Hi! 👋 Just following up on your recent inquiry. We'd love to earn your business! Are you still interested in our services?</div>
+        <div class="bubble out">Hey there! We noticed you haven't booked yet. Don't miss out, book today!</div>
+        <div class="bubble dead">— no reply —</div>
+        <div class="verdict">Reads as spam. Mentions nothing about them. Trains the customer to ignore your number.</div>
+      </div>
+      <div class="phone good reveal" data-d="2">
+        <div class="tag">What we send</div>
+        <div class="bubble out">Hey Marcus, it's Dan from Apex PPF. Back in March we quoted the full front on your Tacoma at $2,400 and you said you wanted to wait till after your bonus. Did that ever land, or should I close your file out?</div>
+        <div class="bubble in">Ha, yeah it did. Still want it done. What do you have next week?</div>
+        <div class="bubble out">Tuesday 10am or Thursday 2:30. Same price as quoted.</div>
+        <div class="verdict">His name. His truck. His package. His price. <span class="hl">What he said last time.</span> It reads like the shop following up, because that's what it is.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="how">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">How it works</div>
+      <h2>Twenty-one days. One file from you. Everything else is on us.</h2>
+      <p class="lede">You don't hand over logins, you don't buy ads, and you don't learn new software. You export your quotes, take one twenty-minute call, and answer your phone when we book someone.</p>
+    </div>
+    <div class="steps">
+      <aside class="process-side">
+        <div class="pill"><i></i>Same system, every shop</div>
+        <h3 style="font-size:clamp(22px,2.2vw,30px)">First bookings usually land around day seven to ten.</h3>
+        <p class="muted" style="margin-top:14px">This isn't a custom project for each shop. It's one process, run the same way every time, with your prices and package names dropped in. That's why it can be guaranteed.</p>
+        <div class="gauge">
+          <div class="k">Where you are</div>
+          <div class="bar"><i id="gaugeBar"></i></div>
+          <div class="lab"><b id="gaugeDay">Day 1</b><span id="gaugeLabel">You send the file</span><span>Day 21</span></div>
+        </div>
+      </aside>
+      <div class="step-list" role="list">
+        <div class="track" aria-hidden="true"><i id="stepFill"></i></div>
+        <div class="step" role="listitem">
+          <div class="ico"><span class="num">1</span><i class="spin"></i><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div>
+          <div>
+            <div class="t"><h3>We read your quotes</h3><span class="d">Days 1–3</span></div>
+            <p>You send the export from your quoting software. We go through every quote that never booked and tell you the real number before anything else happens. We also register a texting number under your shop's name, because that's what carriers require and it's what keeps your messages out of spam.</p>
+            <div class="you">Export the file. Four minutes.</div>
+          </div>
+        </div>
+        <div class="step" role="listitem">
+          <div class="ico"><span class="num">2</span><i class="spin"></i><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div>
+          <div>
+            <div class="t"><h3>We sort the list into three groups</h3><span class="d">Days 3–5</span></div>
+            <p>People who went quiet. People who said "later." Past customers due for maintenance or a recoat. Each one gets their name, vehicle, package, price, date, and the last thing they said, so no message ever goes out blind.</p>
+            <div class="you">One twenty-minute call. Five questions.</div>
+          </div>
+        </div>
+        <div class="step" role="listitem">
+          <div class="ico"><span class="num">3</span><i class="spin"></i><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div>
+          <div>
+            <div class="t"><h3>We write in your shop's voice</h3><span class="d">Days 5–7</span></div>
+            <p>Every message goes out under your shop name and references the actual quote. We pair proof where it fits: a photo of the same package on the same kind of car, from your own work. Anyone who says stop never hears from us again.</p>
+            <div class="you">Send us your twenty best before-and-after photos.</div>
+          </div>
+        </div>
+        <div class="step" role="listitem">
+          <div class="ico"><span class="num">4</span><i class="spin"></i><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div>
+          <div>
+            <div class="t"><h3>We work the list, three touches each</h3><span class="d">Days 7–17</span></div>
+            <p>Reopen. Then proof or an answer to what stopped them. Then "should I close your file out?" That last one gets more replies than anything. We handle every reply ourselves, confirm bookings straight onto your calendar, and remind them the day before and two hours out.</p>
+            <div class="you">Pick up when we book someone. That's it.</div>
+          </div>
+        </div>
+        <div class="step" role="listitem">
+          <div class="ico"><span class="num">5</span><i class="spin"></i><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div>
+          <div>
+            <div class="t"><h3>You get the scorecard</h3><span class="d">Days 18–21</span></div>
+            <p>Contacted, replied, booked, showed, closed, revenue. Your close rate from before we started sits next to the new one. If we're short of ten booked appointments, you get every dollar back and we keep working until you're there.</p>
+            <div class="you">Read one page. Decide if you want it running on live quotes too.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEGMENTS -->
+<section id="segments" style="padding-top:0;background:var(--bg-2)">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">Three kinds of quiet</div>
+      <h2>Every dead quote is one of three people.</h2>
+    </div>
+    <div class="segs">
+      <div class="seg reveal" data-d="1">
+        <div class="k">Group one</div>
+        <h3>Quoted, then went quiet</h3>
+        <p class="ex">Asked for a price, got it, never replied.</p>
+        <div class="msg">Hey Priya, Dan from Apex. We quoted ceramic plus tint on your Model Y in June at $1,850. Never heard back and didn't want to assume. Still on the list, or should I take you off?<small>Touch 1 of 3 · sent under the shop's name</small></div>
+      </div>
+      <div class="seg reveal" data-d="2">
+        <div class="k">Group two</div>
+        <h3>Said "later"</h3>
+        <p class="ex">Spring. After my bonus. Once the truck comes in. Next year.</p>
+        <div class="msg">Hey Chris, you mentioned wanting to wait on the F-150 until spring. It's spring. Holding your $2,600 full-front price if you want it. Couple of Saturday slots open this month.<small>Touch 1 of 3 · references what he said last time</small></div>
+      </div>
+      <div class="seg reveal" data-d="3">
+        <div class="k">Group three</div>
+        <h3>Past customers due back</h3>
+        <p class="ex">Coated or filmed 12+ months ago. Due for maintenance or a recoat.</p>
+        <div class="msg">Hey Sam, Dan at Apex. Your 4Runner's coating is coming up on a year. It'll keep beading fine if we do the maintenance now versus a full redo later. Want me to grab you a slot?<small>Touch 1 of 3 · highest close rate of the three</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEAL -->
+<section id="deal">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">The deal</div>
+      <h2>Flat fee. Ten booked appointments in 21 days, or you don't pay.</h2>
+      <p class="lede">You shouldn't have to trust a stranger's pitch. So the risk sits with us. We'll tell you the exact fee on the call once we've seen your file, because if there's nothing in there we're not going to take your money for it.</p>
+    </div>
+    <div class="deal-grid">
+      <div class="terms reveal" data-d="1">
+        <div class="term">
+          <div class="i"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <div><h3>Ten booked appointments, guaranteed</h3><p>Short of ten from the dead list and you get every dollar back. We also keep working until you hit ten anyway. Only bookings from the list count, so there's no arguing about attribution.</p></div>
+        </div>
+        <div class="term">
+          <div class="i"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></svg></div>
+          <div><h3>One flat fee, no ad spend</h3><p>No retainer to start, no percentage, no budget to hand over. These are people who already asked you for a price. There's nothing to buy to reach them.</p></div>
+        </div>
+        <div class="term">
+          <div class="i"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
+          <div><h3>No logins. No access to anything.</h3><p>We don't need your CRM, your phone system, or your bank. You export one file and email it. Nothing about how you run the shop changes.</p></div>
+        </div>
+        <div class="term">
+          <div class="i"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <div><h3>Under your shop's name, by a person</h3><p>Registered number in your business name, opt-out on every message, quiet hours respected, every text referencing the quote they asked for. A human reads and answers every reply.</p></div>
+        </div>
+      </div>
+      <div class="no-box reveal" data-d="2">
+        <div class="k">When we'll tell you no</div>
+        <h3>This isn't for every shop, and we'd rather say so up front.</h3>
+        <ul>
+          <li><b>No exportable quotes.</b> If your quotes live in a notebook or a text thread, there's nothing for us to work. We'll tell you before either of us spends time.</li>
+          <li><b>Fewer than a few hundred dead quotes.</b> The guarantee only works with enough people on the list. If it's thin, we'll say so and either adjust or pass.</li>
+          <li><b>You can't take the work.</b> If your bays are booked out for two months, filling the calendar isn't your problem yet.</li>
+          <li><b>You want it customised.</b> One system, one message set, one price sheet per shop. That's the reason it works and the reason it's guaranteed.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="padding-top:0">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">Questions shop owners ask</div>
+      <h2>The five things you're probably thinking.</h2>
+    </div>
+    <div class="faq reveal" data-d="1">
+      <div class="qa"><button>"We already follow up."<span class="pm"></span></button><div class="a"><p>Most shops do, once. Ask yourself how many times you reach out before you let it go. It's almost always one. Following up three times converts a big chunk more of the same people. Nothing about the follow-up is wrong. It just stops too early, because nobody's job is to keep going.</p></div></div>
+      <div class="qa"><button>"Those leads are old and dead."<span class="pm"></span></button><div class="a"><p>Someone who asked for a price on PPF in March didn't stop wanting PPF. They got busy, forgot, or went somewhere else. You don't know which until someone reaches back out, and you already paid to get that lead in the door once. We find out, and we don't charge you if there was nothing there.</p></div></div>
+      <div class="qa"><button>"I don't want my customers spammed."<span class="pm"></span></button><div class="a"><p>Neither do we. Every message goes out under your shop's name, references the exact quote they asked for, and anyone who says stop is done for good. It reads like you following up, because functionally that's what it is. Look at the example above. That's the standard, not the brochure version.</p></div></div>
+      <div class="qa"><button>"How do I know this works?"<span class="pm"></span></button><div class="a"><p>You don't yet, which is why you get every dollar back if it doesn't. We're taking that risk, not you. The scorecard at the end shows your close rate before and after, from your own list, so you're not relying on our word for it either.</p></div></div>
+      <div class="qa"><button>"Can you just send me some info?"<span class="pm"></span></button><div class="a"><p>We can, but generic information won't tell you anything useful. The only number that matters is yours. Export your quotes, send the file, and we'll tell you what's sitting in there for free. It takes four minutes and you'll have a real answer instead of a sales page.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about" style="background:var(--bg-2)">
+  <div class="wrap about-grid">
+    <div class="reveal">
+      <div class="eyebrow">Who's behind this</div>
+      <div class="quote">"I've never run a detail shop. <b>I've been inside dozens of them,</b> and every single one had the same quotes sitting in the same phone."</div>
+    </div>
+    <div class="reveal" data-d="1">
+      <p>I spent years doing marketing for shops in this industry. Same pattern every time: the owner is quoting, chasing, booking, and running the floor. The ads were working. The demand was there. And the money was leaking out between the quote and the booking, because there was no one whose job it was to go back.</p>
+      <p>So that's the one thing I do now. I don't sell ads or SEO or a new website. I take the quotes you already sent and I work them like a salesperson would, under your shop's name, until they're on your calendar or they've told me no.</p>
+      <p class="mono" style="font-size:13px;color:var(--fg-3);margin-top:26px">Gibby · LGO · Dead Quote Recovery</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="wrap reveal">
+    <div class="eyebrow" style="justify-content:center">Free, no strings</div>
+    <h2>Find out what's sitting in your quotes.</h2>
+    <p class="lede">Answer three questions. We'll tell you how much quoted work went quiet in the last year, and whether it's worth doing anything about. If it isn't, we'll say so and leave you alone.</p>
+    <div class="actions">
+      <a class="btn btn-primary btn-lg" href="number.html">Get your number <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <div class="fine">Takes about two minutes · No card · No call required to see the number</div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr"></span> LGO · Dead Quote Recovery</span>
+    <span><a href="number.html">Get your number</a> &nbsp;·&nbsp; <a href="#how">How it works</a> &nbsp;·&nbsp; <a href="#deal">The deal</a></span>
+  </div>
+</footer>
+
+<script>document.getElementById('yr').textContent=new Date().getFullYear()</script>
+<script src="site.js"></script>
+</body>
+</html>
